@@ -1,0 +1,48 @@
+ Red, Green, Refactor
+
+// GIVEN
+      const userId: number = null;
+
+// WHEN
+      const scope = getTwoFactor({ userId: userId });
+
+// THEN
+      await expect(scope).rejects.toThrow(UserIdNullException);
+
+1. class -> toBeInstanceOf TokenModel
+2. UserId-> UserIdNullException
+3. UserId-> UserId retrieve
+
+4. device_model -> device_model retrieve
+
+** Refactor add getModel
+** describe
+
+5.  token -> unique
+5.1 token -> ITokenGenerator
+6.  token -> TokenNullException
+7.  token -> retrieve
+
+8. deviceOs -> retrieve
+
+9. name -> NameNullException
+10. name -> retrieve
+
+11. device_os_version -> retrieve
+
+12. appVersion -> retrieve
+
+** mistake copy
+
+13. tokenableType ->  TokenableTypeNullException
+14. tokenableType -> retrieve
+
+15. UserId, deviceModel -> UserIdDeviceNameDuplicateException, ILoginDuplicationChecker
+
+16. createdAt -> retrieve mock Date
+
+*** Decouple to others people and other API or Services
+
+*** The best practice readModel is written in a spread project.
+
+
